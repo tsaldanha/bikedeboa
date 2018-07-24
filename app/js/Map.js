@@ -153,7 +153,7 @@ BDB.Map = (function () {
         isViewWithinBounds: (map.getBounds()) ? map.getBounds().intersects(mapBounds) : isPosWithinBounds(map.getCenter())
       };
       let event = new CustomEvent('map:outofbounds', { detail: centerInfo });
-      document.dispatchEvent(event);
+      //document.dispatchEvent(event);
 
     }, 50);
   };
@@ -434,11 +434,12 @@ BDB.Map = (function () {
       map.data.setMap(null);
     },
     checkBounds: function () {
-      if (map) {
+      /*if (map) {
         return isPosWithinBounds(map.getCenter());
       } else {
         return false;
-      }
+      }*/
+      return true
     },
     goToCoords: function (coords) {
       map.setCenter(convertToGmaps(coords));
